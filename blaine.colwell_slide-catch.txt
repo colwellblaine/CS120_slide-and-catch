@@ -1,0 +1,64 @@
+Blaine Colwell | CS120
+Slide and Catch lab
+
+
+Emulates (some functions of) the basic game type in which the player must move their character in order to collect falling objects
+
+
+pseudocode:
+
+create class "game", inherit from simpleGE Scene
+|initialize game
+|set background
+|create player object
+| 
+|create score and score label
+|
+|create coin list
+|create coins
+||for each coin, give random y offset
+|
+|create sprite list containing player, score label, coins
+|
+|
+|define game process
+||
+||for each coin:
+|||check if collides with player; if so, increment score and reset coin
+
+
+create class "Player", inherit from simpleGE Sprite
+|initialize class
+|set image
+|
+|define update
+||if user presses left, move left etc.
+||
+||if player reaches edge of screen, move back to edge
+
+
+create class "Coin", inherit from simpleGE Sprite
+|initialize class
+|set coin image
+|set a random x offset
+|set move speed with random offset
+|
+|define "reset"
+||move coin back to top of screen and give a new x offset
+|
+|define update
+||move coin
+||
+||if coin goes off bottom of screen, reset
+
+
+create class "ScoreLabel"
+|initialize class
+|set fg color
+|set default text
+|set position
+|set size
+
+
+create game object "game"
+start game
